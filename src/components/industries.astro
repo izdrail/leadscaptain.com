@@ -1,0 +1,40 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+import industries from "../content/industries.json";
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    Supercharge Your Go-To-Market Strategy with a Unified Platform
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    Empower your go-to-market efforts with a single, comprehensive platform. Tap into the most accurate data available on 275 million contacts and 73 million companies. Boost your business growth today!
+  </p>
+</div>
+
+
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {industries.map((item) => (
+      <div class="flex gap-4 items-start">
+        <!-- Circle with the first letter of the title -->
+        <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0 flex items-center justify-center">
+          <span class="text-white text-sm font-semibold">
+            {item.title.charAt(0).toUpperCase()}
+          </span>
+        </div>
+
+        <div>
+          <h1 title={item.title} className="font-semibold text-lg">
+            <a href={`/marketing/${item.slug}`} target="_blank" rel="noopener noreferrer">
+              {item.title}
+            </a>
+          </h1>
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+  ))}
+</div>
+
+

@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import industries from "../../content/industries.json";
+import { useParams } from '@astro/framework';
+
+const { slug } = Astro.params;
+
+// Find the industry data by slug
+const industry = industries.find((item) => item.slug === slug);
+
+// If industry not found, show a 404 page or handle the error
+if (!industry) {
+  throw new Error('Industry not found');
+}
+
+---
+
+<Layout title="Discover our free marketing leads.">
+  <Container>
+
+    <div class="mx-auto prose prose-lg mt-6 max-w-3xl">
+      <div class="mt-16 md:mt-0">
+        <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+          {industry.title}
+        </h2>
+        <p class="text-lg mt-4 text-slate-600">
+          {industry.description}
+        </p>
+      </div>
+    </div>
+
+  </Container>
+</Layout>

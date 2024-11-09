@@ -1,0 +1,103 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+const features = [
+  {
+    title: "Customer Service",
+    description: "Get free lead generation tools for customer service professionals, designed to help you connect with clients effortlessly. Our solutions include free CRM and lead tracking software, making it easy to capture, manage, and follow up with leads, transforming customer service into a powerful lead generator.",
+    icon: "bx:bxs-data",
+  },
+  {
+    title: "Design",
+    description: "Access free design lead generation resources that allow you to connect with clients without upfront costs. Our platform includes free lead management software for designers, helping you capture and nurture leads while showcasing your creative portfolio to potential clients.",
+    icon: "bx:bxs-data",
+  },
+  {
+    title: "Education",
+    description: "Engage students and parents with education-specific lead generation tools at no cost. Get started with free lead capture apps and lead tracking software to enhance enrollment campaigns, manage inquiries, and nurture long-term educational leads effectively.",
+    icon: "bx:bxs-data",
+  },
+  {
+    title: "Engineering",
+    description: "Find high-quality engineering leads for free with automated lead generation strategies. Our free lead management system offers email verification, follow-up automation, and client engagement tools tailored for engineers looking to grow their client base without upfront costs.",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "Finance",
+    description: "Attract finance leads effortlessly using our free lead generation software designed for financial professionals. Gain access to free life insurance leads, mortgage leads, and more with our free CRM and lead tracking tools for financial advisors, maximizing client acquisition without extra expenses.",
+    icon: "bx:bxs-file-find",
+  },
+  {
+    title: "Health",
+    description: "Gain free healthcare leads with our open-source tools, specifically designed for health professionals. Engage patients, streamline communications, and manage leads with free lead capture forms and lead management software, fully compliant with industry standards.",
+    icon: "bx:bxs-user",
+  },
+  {
+    title: "Human Resources",
+    description: "Streamline talent acquisition with free lead generation tools for HR. Capture, track, and engage candidates with our no-cost CRM and lead management software, designed to make recruitment easier and more efficient for HR teams.",
+    icon: "bx:bxs-user",
+  },
+  {
+    title: "Legal",
+    description: "Attract new clients with free legal leads and lead generation tools tailored for law firms. Utilize our free CRM, lead capture pages, and management systems to streamline client intake, increase outreach, and manage legal leads effectively.",
+    icon: "bx:bxs-user",
+  },
+  {
+    title: "Marketing",
+    description: "Drive results with the best free lead generation tools for marketers. Our open-source CRM and lead management software help you capture, nurture, and convert leads with ease, empowering your marketing efforts to reach more clients at zero cost.",
+    icon: "bx:bxs-user",
+  },
+  {
+    title: "Media",
+    description: "Expand your media outreach with free lead generation software that helps you capture audience leads effectively. Our platform offers free email scraping tools, lead tracking, and engagement insights, optimized for media professionals.",
+    icon: "bx:bxs-user",
+  },
+  {
+    title: "Operations",
+    description: "Improve operational workflows with free lead generation and management tools. Use our open-source CRM to capture, organize, and track leads at every stage, simplifying operations and enhancing lead tracking efficiency.",
+    icon: "bx:bxs-user",
+  },
+  {
+    title: "Public Relations",
+    description: "Enhance your PR campaigns with free lead generation resources. Manage outreach, track leads, and measure engagement with free lead tracking software that keeps all your public relations efforts organized and impactful.",
+    icon: "bx:bxs-user",
+  },
+  {
+    title: "Real Estate",
+    description: "Get real estate leads with no upfront cost using our free lead generation platform. From free lead capture pages to CRM tools, our software supports real estate agents in capturing buyer and seller leads without any hidden fees.",
+    icon: "bx:bxs-user",
+  },
+  {
+    title: "Sales",
+    description: "Boost your sales with free sales lead tracking software, designed to automate lead capture and engagement. Utilize our CRM tools to find, manage, and close deals, all while saving costs and optimizing sales processes.",
+    icon: "bx:bxs-user",
+  },
+];
+
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    Supercharge Your Go-To-Market Strategy with a Unified Platform
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    Empower your go-to-market efforts with a single, comprehensive platform. Tap into the most accurate data available on 275 million contacts and 73 million companies. Boost your business growth today!
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h1  title={item.title} class="font-semibold text-lg">{item.title}</h1>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
+

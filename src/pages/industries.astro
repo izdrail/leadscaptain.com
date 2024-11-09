@@ -1,0 +1,39 @@
+---
+import { getCollection } from "astro:content";
+import { Picture } from "astro:assets";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+// Filter blog entries with 'draft: false' & date before current date
+import industries from "../content/industries.json";
+import {Icon} from "astro-icon/components";
+---
+
+<Layout title="Discover our free marketing leads grouped by industries.">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">
+        Marketing Leads
+      </Fragment>
+      <Fragment slot="desc">
+        Discover our free marketing leads grouped by industries.
+      </Fragment>
+    </Sectionhead>
+    <main class="mt-16">
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+        {
+          industries.map((industry) => (
+              <div class="flex gap-4 items-start">
+                <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0"></div>
+                <div>
+                  <h1  title={industry.title} class="font-semibold text-lg">{industry.title}</h1>{" "}
+                  <p class="text-slate-500 mt-2 leading-relaxed">{industry.description}</p>
+                </div>
+              </div>
+          ))
+        }
+      </div>
+    </main>
+  </Container>
+</Layout>

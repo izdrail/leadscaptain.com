@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+import { Picture } from "astro:assets";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+
+---
+
+<Layout title="About">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">About</Fragment>
+      <Fragment slot="desc">
+        Empowering the world with open source data.
+      </Fragment>
+    </Sectionhead>
+
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+
+      <p class="text-lg leading-relaxed text-slate-500">
+        <b>Leads Captain</b> is a one man team that is passionate about open source data.
+        The free data I provide is made possible trough various <b>database leaks </b> that I have found, cleaned and analyze over the years.
+      </p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+
+    </div>
+  </Container>
+</Layout>

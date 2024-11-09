@@ -1,0 +1,4 @@
+SELECT DISTINCT p.*
+FROM people p
+JOIN emails e ON p.id = e.person_id
+WHERE p.location_country = 'united kingdom';

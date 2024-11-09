@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  api.leadscaptain.com:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./organisations.db:/app/organisations.db  # Mount the SQLite database file
+    environment:
+      - DB_PATH=/app/organisations.db  # Environment variable for database path
